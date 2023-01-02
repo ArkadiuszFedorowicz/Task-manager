@@ -4,3 +4,10 @@ button {
     height:45px;
     font-size: 19px;
 }
+
+body {
+    background: rgb(63,94,251);
+    background: linear-gradient(158deg, rgba(63,94,251,1) 28%, rgba(130,220,226,1) 51%, rgba(146,249,220,1) 61%, rgba(146,222,249,1) 82%);
+    color: white;
+    font-weight: 500;
+}

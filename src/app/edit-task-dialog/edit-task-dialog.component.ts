@@ -11,7 +11,7 @@ import { Task } from '../models/task';
 })
 export class EditTaskDialogComponent {
 
- public taskToEdit: Task = new Task(1, 'dssd', 'describe', 'No');
+ public taskToEdit: Task = new Task(1, 'dssd', 'describe', '30/01/2022','No');
 
   constructor(
     public dialogRef: MatDialogRef<EditTaskDialogComponent>,

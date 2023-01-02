@@ -1,5 +1,26 @@
 .task-generator {
-
-    background-color: red;
-    width: 30%;
+  background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(221,37,68,1) 0%, rgba(216,38,74,1) 23%, rgba(253,29,29,1) 44%, rgba(252,176,69,1) 90%);
+border-radius: 15px;
+    margin: 50px;
+    padding: 30px;
 }
+
+ .mat-radio-outer-circle {
+    .mat-radio-checked & {
+          border-color: #3f51b5;
+        }
+    }
+    
+     .mat-radio-inner-circle {
+        background-color: #3f51b5;
+    }
+    
+     .mat-radio-ripple .mat-ripple-element {
+        background-color: rgba(#3f51b5, 0.26);
+    }
+
+    .mat-mdc-icon-button .mat-mdc-button-touch-target {
+        top: 70%;
+        
+    }

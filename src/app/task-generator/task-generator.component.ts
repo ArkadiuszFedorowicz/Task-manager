@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup,  } from '@angular/forms';
+import { Observable } from 'rxjs/internal/Observable';
 import { Task } from '../models/task';
 import { TaskService } from '../task.service';
 
@@ -12,7 +13,7 @@ import { TaskService } from '../task.service';
 export class TaskGeneratorComponent{
 
 
-  public constructor( public taskService: TaskService) {
+  public constructor( public taskService: TaskService, ) {
 
   }
 
@@ -22,21 +23,24 @@ export class TaskGeneratorComponent{
   public formData = new FormGroup({
       name: new FormControl(''),
       describe: new FormControl(''),
+      deadline: new FormControl(''),
       inProgress: new FormControl(''),
 
   });
  
 
-
 public newTask() {
   this.id++;
-  this.addNewTask(this.id, this.formData.value.name, this.formData.value.describe, this.formData.value.inProgress);
+  this.addNewTask(this.id, this.formData.value.name, this.formData.value.describe,this.formData.value.deadline , this.formData.value.inProgress);
 }
 
-public addNewTask(id: any, name: any, describe: any, inProgress: any)
+public addNewTask(id: any, name: any, describe: any, deadline:any, inProgress: any)
 {
-  this.taskService.Tasks.push(new Task(id, name, describe, inProgress));
+  this.taskService.Tasks.push(new Task(id, name, describe, deadline, inProgress));
+  this.taskService.saveTasksToLocalStorage();
   console.log(this.taskService.Tasks);
+  //const objects = JSON.parse(localStorage.getItem('objects'));
+ // console.log(JSON.parse(localStorage.getItem('tasks')));
 }
 
 }
