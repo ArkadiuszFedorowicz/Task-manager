@@ -1,0 +1,14 @@
+<p>task-list works!</p>
+<div class="task-container">
+<h2>Task list:</h2>
+<div class="row">
+<div class="task col-3" *ngFor="let item of taskService.Tasks">
+    <li class="task-name">{{item.id}}</li>
+    <li class="task-name">{{item.name}}</li>
+    <li class="task-name">{{item.describe}}</li>
+    <li class="task-name">{{item.inProgress}}</li>
+    <button mat-raised-button class="edit btn btn-info " (click)="openDialog(item)">Edit</button>
+    <button class="delete btn btn-danger" (click)="removeTask(item)">Delete</button>
+</div> 
+</div>
+</div>

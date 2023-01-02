@@ -1,0 +1,22 @@
+<p>edit-task-dialog works!</p>
+<p>{{data.item.describe}}</p>
+
+<div class="task-generator  d-flex justify-content-center">
+    <div class="container form-gropup"> 
+        <h2>Make a new task!</h2>
+        <form [formGroup] = "formData">
+        <label for="name">Task:</label>
+        <input id="name" class="form-control" type="text" formControlName = "name">
+        <label for="describe">Describe your task!</label>
+        <input id="describe" class="form-control" type="text" formControlName ="describe">
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <button class="button btn btn-primary" [disabled]="!formData.valid" type="submit">Create</button>
+        <label id="radio-group-label">Task in progress?</label>
+        <mat-radio-group id="inProgress" aria-label="Select an option" [(ngModel)]="isInProgress"  formControlName="inProgress">
+            <mat-radio-button value="Yes">Yes</mat-radio-button>
+            <mat-radio-button value="No">No</mat-radio-button>
+          </mat-radio-group>
+    </form>
