@@ -15,8 +15,9 @@ export class TaskListComponent {
   panelOpenState = false;
   
    constructor( public taskService: TaskService, public dialog: MatDialog) {
-      this.taskService.Tasks.push(new Task(1, 'dssd', 'describe','30/01/2023', 'No'));
+     // this.taskService.Tasks.push(new Task(1, 'dssd', 'describe','30/01/2023','No'));
       this.taskService.saveTasksToLocalStorage();
+      this.sortByDatesAscending();
       
   }
 
@@ -25,6 +26,7 @@ export class TaskListComponent {
   openDialog(item: any): void {
     const dialogRef = this.dialog.open(EditTaskDialogComponent, {
       data: {item},
+      height: 'auto',
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -33,6 +35,12 @@ export class TaskListComponent {
     });
   }
 
+
+  public sortByDatesAscending() {
+    return this.taskService.Tasks.sort((a: any, b: any) => {
+      return <any>new Date(a.deadline) - <any>new Date(b.deadline);
+    });
+  }
 
   public removeTask(item: any) {
     console.log(this.taskService.Tasks.filter(task => task === item));

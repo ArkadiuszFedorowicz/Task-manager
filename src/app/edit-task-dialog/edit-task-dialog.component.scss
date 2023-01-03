@@ -1,0 +1,38 @@
+.task-generator {
+   
+  border-radius: 15px;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      color: black;
+      margin: 15px;
+      padding: 10px;
+      overflow-x: hidden;
+  }
+  
+   .mat-radio-outer-circle {
+      .mat-radio-checked & {
+            border-color: #3f51b5;
+          }
+      }
+      
+       .mat-radio-inner-circle {
+          background-color: #3f51b5;
+      }
+      
+       .mat-radio-ripple .mat-ripple-element {
+          background-color: rgba(#3f51b5, 0.26);
+      }
+  
+      .mat-mdc-icon-button .mat-mdc-button-touch-target {
+          top: 70%;
+          
+      }
+  
+      label, .date-input {
+          margin-top: 15px;
+      }
+  
+      .edit-task {
+        background-color: transparent;
+      }

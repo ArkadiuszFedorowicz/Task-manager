@@ -25,10 +25,14 @@ export class EditTaskDialogComponent {
   public formData = new FormGroup({
     name: new FormControl(this.data.item.name),
     describe: new FormControl(this.data.item.describe),
+    deadline: new FormControl(this.data.item.deadline), 
     inProgress: new FormControl('Yes'),
 
 });
 
+  public saveTask(): void {
+    console.log('save task');
+  }
 
   onNoClick(): void {
     this.dialogRef.close();

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup,  } from '@angular/forms';
+import { FormControl, FormGroup, Validators,  } from '@angular/forms';
 import { Observable } from 'rxjs/internal/Observable';
 import { Task } from '../models/task';
 import { TaskService } from '../task.service';
@@ -21,10 +21,10 @@ export class TaskGeneratorComponent{
   public id: number = 1;
 
   public formData = new FormGroup({
-      name: new FormControl(''),
-      describe: new FormControl(''),
-      deadline: new FormControl(''),
-      inProgress: new FormControl(''),
+      name: new FormControl('', [Validators.required]),
+      describe: new FormControl('',[Validators.required]),
+      deadline: new FormControl('', [Validators.required]),
+      inProgress: new FormControl('', [Validators.required]),
 
   });
  
@@ -39,6 +39,7 @@ public addNewTask(id: any, name: any, describe: any, deadline:any, inProgress: a
   this.taskService.Tasks.push(new Task(id, name, describe, deadline, inProgress));
   this.taskService.saveTasksToLocalStorage();
   console.log(this.taskService.Tasks);
+  this.formData.reset();
   //const objects = JSON.parse(localStorage.getItem('objects'));
  // console.log(JSON.parse(localStorage.getItem('tasks')));
 }

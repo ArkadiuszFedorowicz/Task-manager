@@ -8,6 +8,13 @@ button {
 body {
   background: #3f5efb;
   background: linear-gradient(158deg, #3f5efb 28%, #82dce2 51%, #92f9dc 61%, #92def9 82%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
   font-weight: 500;
+  overflow-x: hidden;
+}
+
+app-edit-task-dialog {
+  background-color: transparent;
 }

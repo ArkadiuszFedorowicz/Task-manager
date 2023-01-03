@@ -1,23 +1,22 @@
-<div class = "container row">
+  <div class="row container">
   <div class="col-6"></div>
-  <div class="col-6">
-   <div class="task-generator  d-flex justify-content-center">
-    <div class="container form-gropup"> 
+  <div class="col-4">
+   <div class="task-generator">
+    
+    <div class="form-gropup"> 
     <h2>Make a new task!</h2>
     <form [formGroup] = "formData" (ngSubmit) = "newTask()">
     <label for="name">Task:</label>
-    <input id="name" class="form-control"  type="text" formControlName = "name">
+    <input id="name" class="form-control" matInput placeholder="Name of a task"  type="text" formControlName = "name">
     <label for="describe">Describe your task!</label>
-    <input id="describe" class="form-control" type="text" formControlName ="describe">
-    <label for="describe">Deadline: (MM/DD/YYYY)</label>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-    <br>
-    <input matInput [matDatepicker]="picker"  class="form-control" formControlName ="deadline">
-    <br>
-   
-    
-    <br>
+    <textarea matInput placeholder="Describe your task" class="form-control" type="text" formControlName ="describe"></textarea>
+    <div class="row">
+      <div class="col-3"><label for="deadline">Deadline: (MM/DD/YYYY)</label></div>
+      <div class="col-2"><div class="datePicker"><mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker></div> </div>
+     
+     <div class="col-7 date-input"><input matInput [matDatepicker]="picker" id="deadline" class="form-control" formControlName ="deadline"></div>
+    </div>
     <label id="radio-group-label" for="inProgress">Task in progress?</label>
     <mat-radio-group id="inProgress" aria-label="Select an option" [(ngModel)]="isInProgress"  formControlName="inProgress">
         <mat-radio-button value="Yes">Yes</mat-radio-button>
@@ -28,5 +27,7 @@
 </form>
 </div>
 </div>
+
 </div>
+<div class="col-4"></div>
 </div>

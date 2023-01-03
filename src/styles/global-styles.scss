@@ -7,7 +7,14 @@ button {
 
 body {
     background: rgb(63,94,251);
-    background: linear-gradient(158deg, rgba(63,94,251,1) 28%, rgba(130,220,226,1) 51%, rgba(146,249,220,1) 61%, rgba(146,222,249,1) 82%);
+    background: linear-gradient(158deg, rgba(63,94,251,1) 28%, rgba(130,220,226,1) 51%, rgba(146,249,220,1) 61%, rgba(146,222,249,1) 82%) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: white;
     font-weight: 500;
+    overflow-x: hidden;
+}
+
+app-edit-task-dialog {
+    background-color: transparent;
 }

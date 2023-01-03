@@ -1,15 +1,12 @@
 .task-generator {
-  background: #833ab4;
-  background: linear-gradient(90deg, #833ab4 0%, #dd2544 0%, #d8264a 23%, #fd1d1d 44%, #fcb045 90%);
   border-radius: 15px;
   position: relative;
+  height: 100%;
+  width: 100%;
+  color: black;
   margin: 15px;
-  padding: 30px;
-}
-
-h2 {
-  display: flex;
-  justify-content: center;
+  padding: 10px;
+  overflow-x: hidden;
 }
 
 .mat-radio-checked .mat-radio-outer-circle {
@@ -30,4 +27,8 @@ h2 {
 
 label, .date-input {
   margin-top: 15px;
+}
+
+.edit-task {
+  background-color: transparent;
 }
