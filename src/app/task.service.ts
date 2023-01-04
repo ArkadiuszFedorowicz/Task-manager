@@ -7,6 +7,7 @@ import { Task } from './models/task';
 export class TaskService {
   
  public Tasks: Task[] = JSON.parse(localStorage.getItem('tasks')  || '{}');
+ public taskToReplace: Task | undefined;
 
   constructor() { }
 
@@ -16,5 +17,12 @@ export class TaskService {
     this.Tasks = taskLocal;
     console.log(localStorage.getItem('tasks'))
   }
+
+  public sortByDatesAscending() {
+    return this.Tasks.sort((a: any, b: any) => {
+      return <any>new Date(a.deadline) - <any>new Date(b.deadline);
+    });
+  }
+
   
 }

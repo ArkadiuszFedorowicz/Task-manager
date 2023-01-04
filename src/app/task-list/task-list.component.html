@@ -1,9 +1,9 @@
 
 <div class="task-container">
+  <i class="fa-duotone fa-spinner-third icon"></i> 
 <h2>Task list:</h2>
 <div class="row">
 <div class="task" *ngFor="let item of taskService.Tasks">
-
     <mat-accordion>
         <mat-expansion-panel hideToggle>
           <mat-expansion-panel-header>
@@ -11,11 +11,18 @@
                 {{item.name}}
             </mat-panel-title>
             <mat-panel-description>
-                {{item.inProgress}}
+              <div class="in-progress" *ngIf="item.inProgress === 'Yes' ">
+              <i class="fa-solid fa-spinner"></i> In progress
+            </div>
+            <div class="not-in-progress" *ngIf="item.inProgress !== 'Yes' ">
+              <i class="fa-solid fa-hourglass-start"></i>Not started yet
+            </div>
             </mat-panel-description>
+            <mat-panel-description>
+              {{ item.deadline.toString() | slice:0:10 }}
+          </mat-panel-description>
           </mat-expansion-panel-header>
           <p>{{item.describe}}</p>
-          <p>{{item.deadline}}</p>
           <p>{{item.id}}</p>
           <button mat-raised-button class="edit btn btn-info " (click)="openDialog(item)">Edit</button>
     <button class="delete btn btn-danger" (click)="removeTask(item)">Delete</button>

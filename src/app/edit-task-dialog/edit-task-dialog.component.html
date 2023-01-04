@@ -23,7 +23,7 @@
         <br>
         
         <button class="button btn btn-danger" type="button">Cancel</button>
-        <button class="button btn btn-primary" [disabled]="!formData.valid" type="submit">Save</button>
+        <button class="button btn btn-primary" [disabled]="!formData.valid" (ngSubmit) = "saveTask()"  type="submit">Save</button>
   </form>
   </div>
   </div>

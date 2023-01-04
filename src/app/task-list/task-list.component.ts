@@ -11,13 +11,13 @@ import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogConfig } from '@angul
 })
 export class TaskListComponent {
 
-  task: Task = new Task(1, 'dssd', 'describe','30/01/2023','No');
+  task: Task = new Task(1, 'dssd', 'describe', new Date(),'No');
   panelOpenState = false;
   
    constructor( public taskService: TaskService, public dialog: MatDialog) {
      // this.taskService.Tasks.push(new Task(1, 'dssd', 'describe','30/01/2023','No'));
       this.taskService.saveTasksToLocalStorage();
-      this.sortByDatesAscending();
+      this.taskService.sortByDatesAscending();
       
   }
 
@@ -32,13 +32,6 @@ export class TaskListComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
 
-    });
-  }
-
-
-  public sortByDatesAscending() {
-    return this.taskService.Tasks.sort((a: any, b: any) => {
-      return <any>new Date(a.deadline) - <any>new Date(b.deadline);
     });
   }
 

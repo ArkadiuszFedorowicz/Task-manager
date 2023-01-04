@@ -1,6 +1,6 @@
   <div class="row container">
-  <div class="col-6"></div>
-  <div class="col-4">
+  <div class="col-5"></div>
+  <div class="col-6">
    <div class="task-generator">
     
     <div class="form-gropup"> 
@@ -15,7 +15,7 @@
       <div class="col-2"><div class="datePicker"><mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker></div> </div>
      
-     <div class="col-7 date-input"><input matInput [matDatepicker]="picker" id="deadline" class="form-control" formControlName ="deadline"></div>
+     <div class="col-7 date-input"><input matInput [matDatepicker]="picker" id="deadline" class="form-control"  formControlName ="deadline"></div>
     </div>
     <label id="radio-group-label" for="inProgress">Task in progress?</label>
     <mat-radio-group id="inProgress" aria-label="Select an option" [(ngModel)]="isInProgress"  formControlName="inProgress">

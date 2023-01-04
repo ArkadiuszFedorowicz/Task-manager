@@ -17,3 +17,28 @@ h2 {
   margin-left: 5%;
   margin-top: 70px;
 }
+
+.icon {
+  font-size: 20px;
+  color: blue;
+}
+
+.in-progress {
+  color: #3a8ec9;
+  font-size: 15px;
+}
+
+.in-progress i {
+  margin-right: 4px;
+  margin-top: 3px;
+}
+
+.not-in-progress {
+  color: #de1b4b;
+  font-size: 15px;
+}
+
+.not-in-progress i {
+  margin-right: 8px;
+  margin-top: 3px;
+}
